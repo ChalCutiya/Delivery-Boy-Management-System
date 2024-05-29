@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import MonthHistory from './MonthHistory';
 import { Cards } from '../Homepage/Cards';
 import { getUserDataById } from '../Extra/curdUser';
+import './UserHistory.css'
 
 const DeliveryHistory = () => {
     const { userId } = useParams();

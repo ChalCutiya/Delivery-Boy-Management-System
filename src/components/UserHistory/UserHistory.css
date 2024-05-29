@@ -1,5 +1,6 @@
-.overflow-y-scroll {
-    max-height: 100vh; /* Ensure it takes the full height of the viewport */
-    overflow-y: auto; /* Make sure it is scrollable */
-  }
+
+ .overflow-y-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(88, 88, 88) rgb(0, 0, 0);  
+}
   

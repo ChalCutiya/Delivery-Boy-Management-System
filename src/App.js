@@ -20,7 +20,7 @@ function App() {
 
   return (
     <Router>
-      <div className="body bg-white rounded relative ">
+      <div className="body bg-black rounded relative ">
         <Header showUsers={handleUsers} />
         <Routes>
           <Route path="/" element={<Users users={users} />} />
