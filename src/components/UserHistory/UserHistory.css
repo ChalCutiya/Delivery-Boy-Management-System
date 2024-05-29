@@ -1,0 +1,5 @@
+.overflow-y-scroll {
+    max-height: 100vh; /* Ensure it takes the full height of the viewport */
+    overflow-y: auto; /* Make sure it is scrollable */
+  }
+  
