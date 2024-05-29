@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllUsers, getUndeliveredUsers } from '../Extra/curdUser';
+import { getAllUsers } from '../Extra/curdUser';
 
-const Header = ({ onSearch, showUsers }) => {
+const Header = ({ showUsers }) => {
     const [searchTerm, setSearchTerm] = useState('');
-
-    useEffect(() => {
-        const undeliveredUsers = getUndeliveredUsers();
-        showUsers(undeliveredUsers);
-    }, []);
 
     const handleUsers = () => {
         showUsers(getAllUsers());
     }
-    const handleSearch = (e) => {
-        onSearch(e.target.value);
+    const handleSearch = () => {
+        // onSearch(searchTerm);
     };
 
     return (
@@ -25,6 +20,7 @@ const Header = ({ onSearch, showUsers }) => {
                 name='search'
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyUp={handleSearch}
                 className="p-2 rounded-md border border-gray-400 focus:outline-none focus:ring focus:ring-gray-300"
             />
 

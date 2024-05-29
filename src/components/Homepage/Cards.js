@@ -26,12 +26,14 @@ export const Cards = ({ user }) => {
     }
 
     return (
-        <Link to={`/history/${user.id}`}>
+    
             <div id="card" className="bg-white dark:bg-zinc-800 shadow-lg rounded-lg p-4 flex items-center justify-between m-2 my-2" >
+                <Link to={`/history/${user.id}`}>
                 <div className="flex flex-col justify-center">
                     <span className="font-semibold text-zinc-800 dark:text-zinc-200">{user.name}</span>
                     <span className="text-zinc-600 dark:text-zinc-400">{user.distance}</span>
                 </div>
+                </Link>
                 <div className="flex items-center">
                     <button className="w-8 h-8 bg-green-500 rounded-full mr-2 flex items-center justify-center" onClick={() => callNumber(user.number)}>
                         <img src={phone} alt="icon" />
@@ -53,6 +55,5 @@ export const Cards = ({ user }) => {
                     </button>
                 </div>
             </div>
-        </Link>
     )
 }
