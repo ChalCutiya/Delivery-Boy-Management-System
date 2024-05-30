@@ -28,7 +28,7 @@ export const Cards = ({ user }) => {
     return (
     
             <div id="card" className="bg-white dark:bg-zinc-800 shadow-lg rounded-lg p-4 flex items-center justify-between m-2 my-2" >
-                <Link to={`/history/${user.id}`}>
+                <Link to={`/history?userId=${user.id}`}>
                 <div className="flex flex-col justify-center">
                     <span className="font-semibold text-zinc-800 dark:text-zinc-200">{user.name}</span>
                     <span className="text-zinc-600 dark:text-zinc-400">{user.distance}</span>

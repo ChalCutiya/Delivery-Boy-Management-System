@@ -32,7 +32,7 @@ export const SetUser = () => {
     };
 
     return (
-        <div className="bg-zinc-100 dark:bg-zinc-900 min-h-screen">
+        <div className="bg-black min-h-screen">
             <div className="bg-white dark:bg-zinc-800 p-4 rounded-lg shadow-md max-w-md mx-auto my-4">
                 <h2 className="text-xl text-center font-semibold text-zinc-900 dark:text-white mx-auto my-auto w-100">Delivery Details</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -76,8 +76,8 @@ export const SetUser = () => {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-white">Select Delivery Slot</label>
-                        <div className="flex space-x-2 text-white m-2">
+                        <label className="block text-sm font-medium text-black">Select Delivery Slot</label>
+                        <div className="flex space-x-2 m-2">
                             <input
                                 type="checkbox"
                                 id="morning"

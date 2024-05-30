@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Users users={users} />} />
           <Route path="/set" element={<SetUser />} />
-          <Route path="/history/:userId" element={<UserHistory />} />
+          <Route path="/history" element={<UserHistory />} />
         </Routes>
       </div>
     </Router>
