@@ -5,7 +5,7 @@ const MonthHistory = ({ monthName, monthData }) => {
     const trueCount = monthData.filter(item => item === true).length;
 
     return (
-        <div className="p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg mb-4">
+        <div className="p-4 bg-zinc-800 rounded-lg mb-4">
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-semibold">{monthName}</h2>
                 <div>Total: {trueCount}</div>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import {user} from '../Extra/userSchema';
+import { user } from '../Extra/userSchema';
 import { addUser } from '../Extra/curdUser';
 export const SetUser = () => {
     const [formData, setFormData] = useState(user);
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value});
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSlotChange = (e) => {
@@ -33,11 +33,11 @@ export const SetUser = () => {
 
     return (
         <div className="bg-black min-h-screen">
-            <div className="bg-white dark:bg-zinc-800 p-4 rounded-lg shadow-md max-w-md mx-auto my-4">
-                <h2 className="text-xl text-center font-semibold text-zinc-900 dark:text-white mx-auto my-auto w-100">Delivery Details</h2>
+            <div className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto my-4">
+                <h2 className="text-xl text-center font-semibold text-zinc-900 mx-auto my-auto w-100">Delivery Details</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                        <label htmlFor="name" className="block text-sm font-medium text-zinc-700 ">
                             Name
                         </label>
                         <input
@@ -46,11 +46,11 @@ export const SetUser = () => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring focus:ring-zinc-200 dark:bg-zinc-700 dark:text-white dark:focus:ring-zinc-500 dark:border-zinc-500"
+                            className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring focus:ring-zinc-200   dark:focus:ring-zinc-500 dark:border-zinc-500"
                         />
                     </div>
                     <div>
-                        <label htmlFor="number" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                        <label htmlFor="number" className="block text-sm font-medium text-zinc-700   ">
                             Phone Number
                         </label>
                         <input
@@ -59,11 +59,11 @@ export const SetUser = () => {
                             name="number"
                             value={formData.number}
                             onChange={handleChange}
-                            className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring focus:ring-zinc-200 dark:bg-zinc-700 dark:text-white dark:focus:ring-zinc-500 dark:border-zinc-500"
+                            className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring focus:ring-zinc-200   dark:focus:ring-zinc-500 dark:border-zinc-500"
                         />
                     </div>
                     <div>
-                        <label htmlFor="address" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                        <label htmlFor="address" className="block text-sm font-medium text-zinc-700   ">
                             Address
                         </label>
                         <input
@@ -72,7 +72,7 @@ export const SetUser = () => {
                             name="address"
                             value={formData.address}
                             onChange={handleChange}
-                            className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring focus:ring-zinc-200 dark:bg-zinc-700 dark:text-white dark:focus:ring-zinc-500 dark:border-zinc-500"
+                            className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring focus:ring-zinc-200   dark:focus:ring-zinc-500 dark:border-zinc-500"
                         />
                     </div>
                     <div>
@@ -85,7 +85,7 @@ export const SetUser = () => {
                                 value="morning"
                                 checked={formData.slots.includes('morning')}
                                 onChange={handleSlotChange}
-                                className="text-zinc-700 dark:text-zinc-300"
+                                className="text-zinc-700   "
                             />
                             <label htmlFor="morning">Morning</label>
 
@@ -96,7 +96,7 @@ export const SetUser = () => {
                                 value="evening"
                                 checked={formData.slots.includes('evening')}
                                 onChange={handleSlotChange}
-                                className="text-zinc-700 dark:text-zinc-300"
+                                className="text-zinc-700   "
                             />
                             <label htmlFor="evening">Evening</label>
                         </div>
