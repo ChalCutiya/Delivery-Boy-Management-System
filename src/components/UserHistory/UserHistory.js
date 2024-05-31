@@ -9,9 +9,7 @@ import './UserHistory.css'
 const DeliveryHistory = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-
     const userId = queryParams.get('userId');
-    console.log(userId)
 
     const userHistory = getUserHistoryById(userId);
     const userData = getUserDataById(userId);
