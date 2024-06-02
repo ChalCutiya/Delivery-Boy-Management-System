@@ -4,6 +4,7 @@ import { Users } from './components/Homepage/Users';
 import { SetUser } from './components/SetUser/SetUser';
 import Header from './components/Header/Header';
 import UserHistory from './components/UserHistory/UserHistory';
+import { UpdateUser } from './components/SetUser/UpdateUser';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Users users={users} />} />
           <Route path="/set" element={<SetUser />} />
           <Route path="/history" element={<UserHistory />} />
+          <Route path="/update" element={<UpdateUser  />} />
         </Routes>
       </div>
     </Router>

@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { user as defaultUser } from '../Extra/userSchema';
-import { addUser } from '../Extra/curdUser';
+import { getUserDataById, updateUser } from '../Extra/curdUser';
+import { useLocation } from 'react-router-dom';
 
-export const SetUser = () => {
-    const [formData, setFormData] = useState({ ...defaultUser });
+export const UpdateUser = () => {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const userId = queryParams.get('userId');
+    const user = getUserDataById(userId);
+
+    const [formData, setFormData] = useState(user);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -28,8 +33,8 @@ export const SetUser = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        addUser(formData);
-        setFormData({ ...defaultUser });
+        const updated = updateUser(formData);
+        if (updated) window.alert('User Updated');
     };
 
     const handleResize = (e) => {
@@ -41,7 +46,7 @@ export const SetUser = () => {
     return (
         <div className="bg-black min-h-screen">
             <div className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto m-2">
-                <h2 className="text-xl text-center font-semibold text-zinc-900 mx-auto my-auto w-100">Delivery Details</h2>
+                <h2 className="text-xl text-center font-semibold text-zinc-900 mx-auto my-auto w-100">Update User Details</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium text-zinc-700">
@@ -135,14 +140,14 @@ export const SetUser = () => {
                             value={formData.notes}
                             onChange={handleChange}
                             onInput={handleResize}
-                            className="mt-1 p-1 px-2 flex w-full rounded-md border-zinc-700 shadow-sm focus:border-zinc-400 focus:ring-0 dark:border-zinc-700 dark:focus:border-zinc-400"
+                            className="mt-1 p-1 px-2 block w-full rounded-md border-zinc-700 shadow-sm focus:border-zinc-400 focus:ring-0 dark:border-zinc-700 dark:focus:border-zinc-400"
                         />
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-zinc-500 hover:bg-zinc-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-0 dark:bg-zinc-500 dark:hover:bg-zinc-600"
+                        className="w-full bg-zinc-500 hover:bg-zinc-600 text-white font-medium py-2 px-2 rounded-md focus:outline-none focus:ring-0 dark:bg-zinc-500 dark:hover:bg-zinc-600"
                     >
-                        Submit
+                        Update
                     </button>
                 </form>
             </div>

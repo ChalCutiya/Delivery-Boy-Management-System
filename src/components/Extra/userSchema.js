@@ -1,15 +1,15 @@
-const user = {
-    id: String,
-    name: String,
-    number: String,
+export const user = {
+    id: '',
+    name: '',
+    number: '',
     location: {
-        lat: Number,
-        lon: Number
+        lat: 0,
+        lon: 0
     },
-    address: String,
-    distance: String,
+    address: '',
+    distance: '',
     slots: [],
-    deliveryStatus:[Boolean,Boolean]
-}
-
-export {user};
+    deliveryStatus: [false, false],
+    notes: '',
+    cost1Meal: 0,
+};
