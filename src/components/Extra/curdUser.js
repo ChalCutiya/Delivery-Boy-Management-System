@@ -1,4 +1,5 @@
 import { initializeUserHistory, updateUserDeliveryHistory } from "./deliveryHistory";
+import { capitalizeEachWordFirst } from "./extrafunc";
 
 function getAllUsers() {
     return JSON.parse(localStorage.getItem('users')) || [];
@@ -7,6 +8,8 @@ function getAllUsers() {
 function addUser(newUser) {
     let users = getAllUsers();
     newUser.id = "GO" + Math.random().toString(36).slice(2);
+    newUser.name= capitalizeEachWordFirst(newUser.name);
+    newUser.address= capitalizeEachWordFirst(newUser.address);
     users.push(newUser);
     updateUsers(users);
     initializeUserHistory(newUser.id);
@@ -22,6 +25,8 @@ function getUserDataById(userId){
     return users[index];
 }
 function updateUser(updatedUser) {
+    updatedUser.name= capitalizeEachWordFirst(updatedUser.name);
+    updatedUser.address= capitalizeEachWordFirst(updatedUser.address);
     let users = getAllUsers();
     let index = users.findIndex(user => user.id === updatedUser.id);
     if (index !== -1) {
