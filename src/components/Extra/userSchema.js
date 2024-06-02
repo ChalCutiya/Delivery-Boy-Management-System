@@ -10,6 +10,6 @@ export const user = {
     distance: '',
     slots: [],
     deliveryStatus: [false, false],
-    notes: '',
-    cost1Meal: 0,
+    notes: 'Payment - ',
+    cost1Meal: 50,
 };
